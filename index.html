@@ -1,0 +1,116 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function checkrno(){
+        var a=document.getElementById("t1").value;
+        if(isNaN(a)){
+        document.getElementById("x").innerHTML="Roll no. should be an integer";
+        document.getElementById("x").style.color='red';
+    }
+    else if(a.length==5){
+        document.getElementById("x").innerHTML="Valid";
+        document.getElementById("x").style.color='green';
+    }
+    else{
+        document.getElementById("x").innerHTML="Enter a 5 digit roll no.";
+        document.getElementById("x").style.color='red';
+    }
+}
+function checkmob(){
+        var b=document.getElementById("t2").value;
+        if(isNaN(b)){
+        document.getElementById("x1").innerHTML="MOb no. should be an integer";
+        document.getElementById("x1").style.color='red';
+    }
+    else if(b.length==10){
+        document.getElementById("x1").innerHTML="Valid";
+        document.getElementById("x1").style.color='green';
+    }
+    else{
+        document.getElementById("x1").innerHTML="Enter a 10 digit mob no.";
+        document.getElementById("x1").style.color='red';
+    }
+}
+    function checkage(){
+        var c=document.getElementById("t3").value;
+        if(isNaN(c)){
+        document.getElementById("x2").innerHTML="Age should be an integer";
+        document.getElementById("x2").style.color='red';
+    }
+    else if(c.length>0 && c.length<3){
+        document.getElementById("x2").innerHTML="Valid";
+        document.getElementById("x2").style.color='green';
+    }
+    else{
+        document.getElementById("x2").innerHTML="Enter a valid age";
+        document.getElementById("x2").style.color='red';
+    }
+    }
+    function checkmail(){
+        var d=document.getElementById("t4").value;
+        var re=/^\S+@\S+\.\S+$/;
+        if(re.test(d)==false){
+            document.getElementById("x3").innerHTML="Enter a valid email";
+            document.getElementById("x3").style.color='red';
+        }
+        else{
+            document.getElementById("x3").innerHTML="Valid";
+            document.getElementById("x3").style.color='green';
+        }
+    }
+    function checkname(){
+        var e=document.getElementById("t5").value;
+        var reg=/^([a-zA-Z ]){2,30}$/;
+        if(reg.test(e)==false){
+            document.getElementById("x4").innerHTML="Enter a valid name";
+            document.getElementById("x4").style.color='red';
+        }
+        else{
+            document.getElementById("x4").innerHTML="Valid";
+            document.getElementById("x4").style.color='green';
+        }
+    }
+    function checkpswd(){
+        var f=document.getElementById("t6").value;
+        var reg=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+        if(reg.test(f)==false){
+            document.getElementById("x5").innerHTML="Enter a valid pswd";
+            document.getElementById("x5").style.color='red';
+        }
+        else{
+            document.getElementById("x5").innerHTML="Valid";
+            document.getElementById("x5").style.color='green';
+        }
+    }
+    function checkdate(){
+        var g=document.getElementById("t7").value;
+        var reg=/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+        if(reg.test(g)==false){
+            document.getElementById("x6").innerHTML="Enter a valid date";
+            document.getElementById("x6").style.color='red';
+        }
+        else{
+            document.getElementById("x6").innerHTML="Valid";
+            document.getElementById("x6").style.color='green';
+        }
+    }
+</script>
+<body>
+    Roll no.<input type="text" id="t1" onblur="checkrno()">
+    <p id="x"></p>
+    MOB No. <input type="text" id="t2" onblur="checkmob()">
+    <p id="x1"></p>
+    Age: <input type="text" id="t3" onblur="checkage()">
+    <p id="x2"></p>
+    Email: <input type="text" id="t4" onblur="checkmail()"><p id="x3"></p>
+    Name: <input type="text" id="t5" onblur="checkname()"><p id="x4"></p>
+    Password: <input type="text" id="t6" onblur="checkpswd()"><p id="x5"></p>
+    Date:<input type="text" id="t7" onblur="checkdate()"><p id="x6"></p>
+</body>
+</html>
